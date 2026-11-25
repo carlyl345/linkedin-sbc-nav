@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+tracker.db
+tracker.db-*
+config.toml
+credentials.json
+token.json
+*.key

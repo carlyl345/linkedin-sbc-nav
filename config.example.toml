@@ -1,0 +1,26 @@
+# Copy to config.toml and fill in. config.toml is git-ignored.
+
+my_name = "Carly"                 # your name as LinkedIn shows it in threads
+db_path = "tracker.db"            # relative paths are resolved next to this file
+follow_up_days = 4                # nudge when your last message is older than this with no reply
+capture_port = 8765               # localhost port the Chrome extension posts screenshots to
+shared_secret = "change-me-to-a-long-random-string"   # paste the same value into the extension
+anthropic_api_key_path = "~/.config/linkedin-tracker/anthropic.key"  # file holding only the key
+vision_model = "claude-opus-5-5"
+
+[gmail]
+enabled = true
+credentials_path = "credentials.json"   # OAuth client (Desktop app) from Google Cloud Console
+token_path = "token.json"               # created on first login
+poll_minutes = 15
+# UNCONFIRMED: check these against real LinkedIn notification emails in your inbox
+# before relying on them (see README, "Confirm the email format").
+query = "from:(messages-noreply@linkedin.com OR messaging-digest-noreply@linkedin.com OR inmail-hit-reply@linkedin.com) newer_than:30d"
+# Regexes tried in order against the subject; the first one with a (?P<name>...) group wins.
+subject_patterns = [
+  '^(?P<name>.+?) (?:just )?(?:sent you a (?:new )?message|messaged you)',
+  '^(?:New message|Message) from (?P<name>.+)$',
+  '^(?P<name>.+?) replied',
+]
+# Display-name suffix LinkedIn adds to the From header, e.g. "Sam Lee via LinkedIn".
+from_name_suffix = " via LinkedIn"
