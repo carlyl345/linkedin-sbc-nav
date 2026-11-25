@@ -1,0 +1,8 @@
+{
+  "_note": "SYNTHETIC sample - a digest covering several people is skipped, not guessed",
+  "headers": {"From": "LinkedIn <messaging-digest-noreply@linkedin.com>",
+              "Subject": "You have 3 new messages"},
+  "snippet": "Sam Lee, Priya Raman and 1 other sent you messages",
+  "internalDate": "1762074000000",
+  "expected": null
+}

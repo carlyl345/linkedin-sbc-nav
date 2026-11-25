@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Sales Tracker Capture",
+  "version": "0.1.0",
+  "description": "On click, screenshots the visible LinkedIn conversation and sends it to your local tracker. Never reads page code or calls LinkedIn.",
+  "action": {
+    "default_title": "Log this conversation",
+    "default_popup": "popup.html"
+  },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"]
+}
